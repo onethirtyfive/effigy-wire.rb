@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+require 'logger'
+
+err_log = Logger.new(STDERR)
+
+PROTO_ROOT =
+  begin
+    ENV.fetch('PROTO_ROOT')
+  rescue KeyError
+    File.join(Dir.pwd, 'proto')
+  end
+
+proto_paths = Dir.glob("#{PROTO_ROOT}/**/*").select do |proto_path|
+  next(false) if File.directory?(proto_path)
+  true
+end
+
+if proto_paths.empty?
+  raise <<-EOV
+
+  
+  No definitions found in #{PROTO_ROOT}!
+
+    Either:
+      1. Run ./bin/bootstrap in the project root directory, or
+      2. Set PROTO_ROOT to the location of your proto definitions
+
+  EOV
+end
+
+proto_paths.each do |proto_path|
+  if File.extname(proto_path) != '.proto'
+    err_log.warn("Stray file '#{File.basename(proto_path)}' " \
+                 "found! Run bin/clean?")
+    next
+  end
+
+  exclusion_index =
+    proto_path.split('/').length - 1 == PROTO_ROOT.split('/').length ? -3
+                                                                     : -2
+  rel_path           = proto_path[PROTO_ROOT.length+1..-1]
+  package_components =
+    [
+      'effigy',
+      'wire',
+      rel_path.split('/')[0..exclusion_index] # ditch filename.proto
+    ].flatten
+
+  package = package_components.join('.')
+
+  puts "> Packaging #{File.basename(proto_path)} in '#{package}'." 
+
+  cmd = "sed -i '1s/^/package #{package};\\n\\n/' #{proto_path}"
+  system(cmd)
+end

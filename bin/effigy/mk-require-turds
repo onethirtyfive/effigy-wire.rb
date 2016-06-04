@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+require 'logger'
+
+err_log = Logger.new(STDERR)
+
+LIB_ROOT =
+  begin
+    ENV.fetch('LIB_ROOT')
+  rescue KeyError
+    File.join(__dir__, '..', 'lib')
+  end
+
+REQUIRE_TURD_GENERATOR =
+  -> (mod) do
+    <<-EOV
+Dir[File.join(File.dirname(__FILE__), '#{mod}', '*.rb')].each do |file|
+  require file
+end
+    EOV
+  end
+
+# lib/effigy
+path = File.join(LIB_ROOT, 'effigy.rb')
+File.open(path, 'w') do |file|
+  file.write(REQUIRE_TURD_GENERATOR.call('effigy'))
+end
+
+# lib/effigy/wire
+path = File.join(LIB_ROOT, 'effigy', 'wire.rb')
+File.open(path, 'w') do |file|
+  file.write(REQUIRE_TURD_GENERATOR.call('wire'))
+end
+
+# lib/effigy/wire/#{package}.rb
+packages_root = File.join(LIB_ROOT, 'effigy', 'wire')
+Dir.glob(File.join(packages_root, '*')).each do |path|
+  next unless File.directory?(path)
+  package = File.basename(path)
+  File.open(File.join(packages_root, "#{package}.rb"), 'w') do |file|
+    file.write(REQUIRE_TURD_GENERATOR.call(package))
+  end
+end

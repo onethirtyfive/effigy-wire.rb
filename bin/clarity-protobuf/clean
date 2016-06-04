@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+PROTO_ROOT =
+  begin
+    ENV.fetch('PROTO_ROOT')
+  rescue KeyError
+    File.join(Dir.pwd, 'proto')
+  end
+
+print "Remove non-proto files in #{PROTO_ROOT}? [yN] > "
+answer = gets.strip
+
+unless answer == 'y'
+  puts 'OK, aborting.'
+  exit(0)
+end
+
+
+begin
+  bindir_path = File.join(PROTO_ROOT, 'bin')
+  puts "> Removing #{bindir_path}"
+  FileUtils.rm_rf(bindir_path)
+rescue Errno::ENOENT
+end
+
+proto_paths = Dir.glob("#{PROTO_ROOT}/**/*")
+
+proto_paths.each do |proto_path|
+  next if File.directory?(proto_path)
+  next if File.extname(proto_path) == '.proto' # keep these
+
+  puts "> Removing #{proto_path}"
+  File.delete(proto_path)
+end

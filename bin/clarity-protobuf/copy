@@ -1,0 +1,75 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'logger'
+
+err_log = Logger.new(STDERR)
+
+CLARITY_PROTO_ROOT =
+  begin
+    ENV.fetch('CLARITY_PROTO_ROOT')
+  rescue KeyError
+    File.join(
+      Dir.pwd,
+      '..',
+      'clarity-protobuf',
+      'src', 'main', 'proto'
+    )
+  end
+
+CLARITY_PROTO_BIN_ROOT =
+  begin
+    ENV.fetch('CLARITY_PROTO_BIN_ROOT')
+  rescue KeyError
+    File.join(CLARITY_PROTO_ROOT, 'bin')
+  end
+
+CLARITY_PROTO_COMMON_ROOT =
+  begin
+    ENV.fetch('CLARITY_PROTO_COMMON_ROOT')
+  rescue KeyError
+    File.join(CLARITY_PROTO_ROOT, 'common')
+  end
+
+PROTO_ROOT =
+  begin
+    ENV.fetch('PROTO_ROOT')
+  rescue KeyError
+    File.join(Dir.pwd, 'proto')
+  end
+
+src_package_paths = Dir.glob("#{CLARITY_PROTO_ROOT}/*").select do |package_path|
+  next(false) if package_path.include?(CLARITY_PROTO_BIN_ROOT)
+  next(false) if package_path.include?(CLARITY_PROTO_COMMON_ROOT)
+  true
+end
+
+if src_package_paths.empty?
+  raise <<-EOV
+
+
+  Provided clarity-protobuf proto root is apparently empty. Exiting
+
+  EOV
+end
+
+src_package_paths.each do |src_package_path|
+  begin
+    puts "> Copying '#{File.basename(src_package_path)}'"
+    FileUtils.cp_r(src_package_path, PROTO_ROOT)
+  rescue Exception => e
+    err_log.fatal(e.to_s)
+    exit(-1)
+  end
+end
+
+begin
+  puts "> Copying '#{File.basename(CLARITY_PROTO_COMMON_ROOT)}' files to destination root"
+  FileUtils.cp(
+    Dir.glob(File.join(CLARITY_PROTO_COMMON_ROOT, '*.proto')),
+    PROTO_ROOT
+  )
+rescue Exception => e
+  err_log.fatal(e.to_s)
+  exit(-1)
+end
