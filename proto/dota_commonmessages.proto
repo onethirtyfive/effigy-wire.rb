@@ -1,0 +1,183 @@
+package effigy.wire;
+
+option java_package = "skadistats.clarity.wire.common.proto";
+option java_outer_classname = "DotaCommonMessages";
+
+option optimize_for = SPEED;
+option cc_generic_services = false;
+
+enum EDOTAChatWheelMessage {
+	K_EDOTA_CW_Ok = 0;
+	K_EDOTA_CW_Care = 1;
+	K_EDOTA_CW_GetBack = 2;
+	K_EDOTA_CW_NeedWards = 3;
+	K_EDOTA_CW_Stun = 4;
+	K_EDOTA_CW_Help = 5;
+	K_EDOTA_CW_Push = 6;
+	K_EDOTA_CW_GoodJob = 7;
+	K_EDOTA_CW_Missing = 8;
+	K_EDOTA_CW_Missing_Top = 9;
+	K_EDOTA_CW_Missing_Mid = 10;
+	K_EDOTA_CW_Missing_Bottom = 11;
+	K_EDOTA_CW_Go = 12;
+	K_EDOTA_CW_Initiate = 13;
+	K_EDOTA_CW_Follow = 14;
+	K_EDOTA_CW_Group_Up = 15;
+	K_EDOTA_CW_Spread_Out = 16;
+	K_EDOTA_CW_Split_Farm = 17;
+	K_EDOTA_CW_Attack = 18;
+	K_EDOTA_CW_BRB = 19;
+	K_EDOTA_CW_Dive = 20;
+	K_EDOTA_CW_OMW = 21;
+	K_EDOTA_CW_Get_Ready = 22;
+	K_EDOTA_CW_Bait = 23;
+	K_EDOTA_CW_Heal = 24;
+	K_EDOTA_CW_Mana = 25;
+	K_EDOTA_CW_OOM = 26;
+	K_EDOTA_CW_Skill_Cooldown = 27;
+	K_EDOTA_CW_Ulti_Ready = 28;
+	K_EDOTA_CW_Enemy_Returned = 29;
+	K_EDOTA_CW_All_Missing = 30;
+	K_EDOTA_CW_Enemy_Incoming = 31;
+	K_EDOTA_CW_Invis_Enemy = 32;
+	K_EDOTA_CW_Enemy_Had_Rune = 33;
+	K_EDOTA_CW_Split_Push = 34;
+	K_EDOTA_CW_Coming_To_Gank = 35;
+	K_EDOTA_CW_Request_Gank = 36;
+	K_EDOTA_CW_Fight_Under_Tower = 37;
+	K_EDOTA_CW_Deny_Tower = 38;
+	K_EDOTA_CW_Buy_Courier = 39;
+	K_EDOTA_CW_Upgrade_Courier = 40;
+	K_EDOTA_CW_Need_Detection = 41;
+	K_EDOTA_CW_They_Have_Detection = 42;
+	K_EDOTA_CW_Buy_TP = 43;
+	K_EDOTA_CW_Reuse_Courier = 44;
+	K_EDOTA_CW_Deward = 45;
+	K_EDOTA_CW_Building_Mek = 46;
+	K_EDOTA_CW_Building_Pipe = 47;
+	K_EDOTA_CW_Stack_And_Pull = 48;
+	K_EDOTA_CW_Pull = 49;
+	K_EDOTA_CW_Pulling = 50;
+	K_EDOTA_CW_Stack = 51;
+	K_EDOTA_CW_Jungling = 52;
+	K_EDOTA_CW_Roshan = 53;
+	K_EDOTA_CW_Affirmative = 54;
+	K_EDOTA_CW_Wait = 55;
+	K_EDOTA_CW_Pause = 56;
+	K_EDOTA_CW_Current_Time = 57;
+	K_EDOTA_CW_Check_Runes = 58;
+	K_EDOTA_CW_Smoke_Gank = 59;
+	K_EDOTA_CW_GLHF = 60;
+	K_EDOTA_CW_Nice = 61;
+	K_EDOTA_CW_Thanks = 62;
+	K_EDOTA_CW_Sorry = 63;
+	K_EDOTA_CW_No_Give_Up = 64;
+	K_EDOTA_CW_Just_Happened = 65;
+	K_EDOTA_CW_Game_Is_Hard = 66;
+	K_EDOTA_CW_New_Meta = 67;
+	K_EDOTA_CW_My_Bad = 68;
+	K_EDOTA_CW_Regret = 69;
+	K_EDOTA_CW_Relax = 70;
+	K_EDOTA_CW_MissingHero = 71;
+	K_EDOTA_CW_ReturnedHero = 72;
+	K_EDOTA_CW_GG = 73;
+	K_EDOTA_CW_GGWP = 74;
+	K_EDOTA_CW_All_GG = 75;
+	K_EDOTA_CW_All_GGWP = 76;
+	K_EDOTA_CW_What_To_Buy = 77;
+	K_EDOTA_CW_Im_Retreating = 78;
+	K_EDOTA_CW_Space_Created = 79;
+	K_EDOTA_CW_Whoops = 80;
+	K_EDOTA_CW_Tower_then_Back = 81;
+	K_EDOTA_CW_Barracks_then_Back = 82;
+	K_EDOTA_CW_Ward_Bottom_Rune = 83;
+	K_EDOTA_CW_Ward_Top_Rune = 84;
+	K_EDOTA_CW_Zeus_Ult = 85;
+}
+
+enum EDOTAStatPopupTypes {
+	K_EDOTA_SPT_Textline = 0;
+	K_EDOTA_SPT_Basic = 1;
+	K_EDOTA_SPT_Poll = 2;
+	K_EDOTA_SPT_Grid = 3;
+}
+
+enum dotaunitorder_t {
+	DOTA_UNIT_ORDER_NONE = 0;
+	DOTA_UNIT_ORDER_MOVE_TO_POSITION = 1;
+	DOTA_UNIT_ORDER_MOVE_TO_TARGET = 2;
+	DOTA_UNIT_ORDER_ATTACK_MOVE = 3;
+	DOTA_UNIT_ORDER_ATTACK_TARGET = 4;
+	DOTA_UNIT_ORDER_CAST_POSITION = 5;
+	DOTA_UNIT_ORDER_CAST_TARGET = 6;
+	DOTA_UNIT_ORDER_CAST_TARGET_TREE = 7;
+	DOTA_UNIT_ORDER_CAST_NO_TARGET = 8;
+	DOTA_UNIT_ORDER_CAST_TOGGLE = 9;
+	DOTA_UNIT_ORDER_HOLD_POSITION = 10;
+	DOTA_UNIT_ORDER_TRAIN_ABILITY = 11;
+	DOTA_UNIT_ORDER_DROP_ITEM = 12;
+	DOTA_UNIT_ORDER_GIVE_ITEM = 13;
+	DOTA_UNIT_ORDER_PICKUP_ITEM = 14;
+	DOTA_UNIT_ORDER_PICKUP_RUNE = 15;
+	DOTA_UNIT_ORDER_PURCHASE_ITEM = 16;
+	DOTA_UNIT_ORDER_SELL_ITEM = 17;
+	DOTA_UNIT_ORDER_DISASSEMBLE_ITEM = 18;
+	DOTA_UNIT_ORDER_MOVE_ITEM = 19;
+	DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO = 20;
+	DOTA_UNIT_ORDER_STOP = 21;
+	DOTA_UNIT_ORDER_TAUNT = 22;
+	DOTA_UNIT_ORDER_BUYBACK = 23;
+	DOTA_UNIT_ORDER_GLYPH = 24;
+	DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH = 25;
+	DOTA_UNIT_ORDER_CAST_RUNE = 26;
+	DOTA_UNIT_ORDER_PING_ABILITY = 27;
+	DOTA_UNIT_ORDER_MOVE_TO_DIRECTION = 28;
+	DOTA_UNIT_ORDER_PATROL = 29;
+	DOTA_UNIT_ORDER_VECTOR_TARGET_POSITION = 30;
+	DOTA_UNIT_ORDER_RADAR = 31;
+}
+
+message CDOTAMsg_LocationPing {
+	optional int32 x = 1;
+	optional int32 y = 2;
+	optional int32 target = 3;
+	optional bool direct_ping = 4;
+	optional int32 type = 5;
+}
+
+message CDOTAMsg_ItemAlert {
+	optional int32 x = 1;
+	optional int32 y = 2;
+	optional int32 itemid = 3;
+}
+
+message CDOTAMsg_EnemyItemAlert {
+	optional uint32 player_id = 1;
+	optional int32 itemid = 2;
+}
+
+message CDOTAMsg_MapLine {
+	optional int32 x = 1;
+	optional int32 y = 2;
+	optional bool initial = 3;
+}
+
+message CDOTAMsg_WorldLine {
+	optional int32 x = 1;
+	optional int32 y = 2;
+	optional int32 z = 3;
+	optional bool initial = 4;
+	optional bool end = 5;
+}
+
+message CDOTAMsg_SendStatPopup {
+	optional EDOTAStatPopupTypes style = 1 [default = K_EDOTA_SPT_Textline];
+	repeated string stat_strings = 2;
+	repeated int32 stat_images = 3;
+}
+
+message CDOTAMsg_CoachHUDPing {
+	optional uint32 x = 1;
+	optional uint32 y = 2;
+	optional string tgtpath = 3;
+}
