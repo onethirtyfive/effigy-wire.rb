@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    effigy_wire (0.0.1)
+    effigy_wire (0.0.2)
+      protobuf (~> 3.6.9, >= 3.6.9)
 
 GEM
   remote: https://rubygems.org/
@@ -33,7 +34,6 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.7)
   effigy_wire!
-  protobuf (~> 3.6.9)
   rake (~> 10.0)
 
 BUNDLED WITH
