@@ -3,35 +3,36 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 module Effigy
   module Wire
+    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
     ##
     # Enum Classes
     #
     class EDemoCommands < ::Protobuf::Enum
-      define :DEM_Error, -1
-      define :DEM_Stop, 0
-      define :DEM_FileHeader, 1
-      define :DEM_FileInfo, 2
-      define :DEM_SyncTick, 3
-      define :DEM_SendTables, 4
-      define :DEM_ClassInfo, 5
-      define :DEM_StringTables, 6
-      define :DEM_Packet, 7
-      define :DEM_SignonPacket, 8
-      define :DEM_ConsoleCmd, 9
-      define :DEM_CustomData, 10
-      define :DEM_CustomDataCallbacks, 11
-      define :DEM_UserCmd, 12
-      define :DEM_FullPacket, 13
-      define :DEM_SaveGame, 14
-      define :DEM_SpawnGroups, 15
-      define :DEM_Max, 16
-      define :DEM_IsCompressed_S1, 112
-      define :DEM_IsCompressed_S2, 64
+      define :DEM_ERROR, -1
+      define :DEM_STOP, 0
+      define :DEM_FILEHEADER, 1
+      define :DEM_FILEINFO, 2
+      define :DEM_SYNCTICK, 3
+      define :DEM_SENDTABLES, 4
+      define :DEM_CLASSINFO, 5
+      define :DEM_STRINGTABLES, 6
+      define :DEM_PACKET, 7
+      define :DEM_SIGNONPACKET, 8
+      define :DEM_CONSOLECMD, 9
+      define :DEM_CUSTOMDATA, 10
+      define :DEM_CUSTOMDATACALLBACKS, 11
+      define :DEM_USERCMD, 12
+      define :DEM_FULLPACKET, 13
+      define :DEM_SAVEGAME, 14
+      define :DEM_SPAWNGROUPS, 15
+      define :DEM_MAX, 16
+      define :DEM_ISCOMPRESSED_S1, 112
+      define :DEM_ISCOMPRESSED_S2, 64
     end
 
 

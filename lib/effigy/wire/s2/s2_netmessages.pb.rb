@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,35 +14,36 @@ require_relative '../netmessages.pb'
 module Effigy
   module Wire
     module S2
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Enum Classes
       #
       class SVC_Messages < ::Protobuf::Enum
-        define :SVC_ServerInfo, 40
-        define :SVC_FlattenedSerializer, 41
-        define :SVC_ClassInfo, 42
-        define :SVC_SetPause, 43
-        define :SVC_CreateStringTable, 44
-        define :SVC_UpdateStringTable, 45
-        define :SVC_VoiceInit, 46
-        define :SVC_VoiceData, 47
-        define :SVC_Print, 48
-        define :SVC_Sounds, 49
-        define :SVC_SetView, 50
-        define :SVC_ClearAllStringTables, 51
-        define :SVC_CmdKeyValues, 52
-        define :SVC_BSPDecal, 53
-        define :SVC_SplitScreen, 54
-        define :SVC_PacketEntities, 55
-        define :SVC_Prefetch, 56
-        define :SVC_Menu, 57
-        define :SVC_GetCvarValue, 58
-        define :SVC_StopSound, 59
-        define :SVC_PeerList, 60
-        define :SVC_PacketReliable, 61
-        define :SVC_HLTVStatus, 62
-        define :SVC_FullFrameSplit, 70
+        define :SVC_SERVERINFO, 40
+        define :SVC_FLATTENEDSERIALIZER, 41
+        define :SVC_CLASSINFO, 42
+        define :SVC_SETPAUSE, 43
+        define :SVC_CREATESTRINGTABLE, 44
+        define :SVC_UPDATESTRINGTABLE, 45
+        define :SVC_VOICEINIT, 46
+        define :SVC_VOICEDATA, 47
+        define :SVC_PRINT, 48
+        define :SVC_SOUNDS, 49
+        define :SVC_SETVIEW, 50
+        define :SVC_CLEARALLSTRINGTABLES, 51
+        define :SVC_CMDKEYVALUES, 52
+        define :SVC_BSPDECAL, 53
+        define :SVC_SPLITSCREEN, 54
+        define :SVC_PACKETENTITIES, 55
+        define :SVC_PREFETCH, 56
+        define :SVC_MENU, 57
+        define :SVC_GETCVARVALUE, 58
+        define :SVC_STOPSOUND, 59
+        define :SVC_PEERLIST, 60
+        define :SVC_PACKETRELIABLE, 61
+        define :SVC_HLTVSTATUS, 62
+        define :SVC_FULLFRAMESPLIT, 70
       end
 
 

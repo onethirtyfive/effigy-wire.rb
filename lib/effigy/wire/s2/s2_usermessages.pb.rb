@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,61 +14,62 @@ require_relative '../networkbasetypes.pb'
 module Effigy
   module Wire
     module S2
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Enum Classes
       #
       class EBaseUserMessages < ::Protobuf::Enum
-        define :UM_AchievementEvent, 101
-        define :UM_CloseCaption, 102
-        define :UM_CloseCaptionDirect, 103
-        define :UM_CurrentTimescale, 104
-        define :UM_DesiredTimescale, 105
-        define :UM_Fade, 106
-        define :UM_GameTitle, 107
-        define :UM_HintText, 109
-        define :UM_HudMsg, 110
-        define :UM_HudText, 111
-        define :UM_KeyHintText, 112
-        define :UM_ColoredText, 113
-        define :UM_RequestState, 114
-        define :UM_ResetHUD, 115
-        define :UM_Rumble, 116
-        define :UM_SayText, 117
-        define :UM_SayText2, 118
-        define :UM_SayTextChannel, 119
-        define :UM_Shake, 120
-        define :UM_ShakeDir, 121
-        define :UM_TextMsg, 124
-        define :UM_ScreenTilt, 125
-        define :UM_Train, 126
-        define :UM_VGUIMenu, 127
-        define :UM_VoiceMask, 128
-        define :UM_VoiceSubtitle, 129
-        define :UM_SendAudio, 130
-        define :UM_ItemPickup, 131
-        define :UM_AmmoDenied, 132
-        define :UM_CrosshairAngle, 133
-        define :UM_ShowMenu, 134
-        define :UM_CreditsMsg, 135
-        define :UM_CloseCaptionPlaceholder, 142
-        define :UM_CameraTransition, 143
-        define :UM_AudioParameter, 144
-        define :UM_ParticleManager, 145
-        define :UM_HudError, 146
-        define :UM_CustomGameEvent_ClientToServer, 147
-        define :UM_CustomGameEvent_ServerToClient, 148
-        define :UM_TrackedControllerInput_ClientToServer, 149
+        define :UM_ACHIEVEMENTEVENT, 101
+        define :UM_CLOSECAPTION, 102
+        define :UM_CLOSECAPTIONDIRECT, 103
+        define :UM_CURRENTTIMESCALE, 104
+        define :UM_DESIREDTIMESCALE, 105
+        define :UM_FADE, 106
+        define :UM_GAMETITLE, 107
+        define :UM_HINTTEXT, 109
+        define :UM_HUDMSG, 110
+        define :UM_HUDTEXT, 111
+        define :UM_KEYHINTTEXT, 112
+        define :UM_COLOREDTEXT, 113
+        define :UM_REQUESTSTATE, 114
+        define :UM_RESETHUD, 115
+        define :UM_RUMBLE, 116
+        define :UM_SAYTEXT, 117
+        define :UM_SAYTEXT2, 118
+        define :UM_SAYTEXTCHANNEL, 119
+        define :UM_SHAKE, 120
+        define :UM_SHAKEDIR, 121
+        define :UM_TEXTMSG, 124
+        define :UM_SCREENTILT, 125
+        define :UM_TRAIN, 126
+        define :UM_VGUIMENU, 127
+        define :UM_VOICEMASK, 128
+        define :UM_VOICESUBTITLE, 129
+        define :UM_SENDAUDIO, 130
+        define :UM_ITEMPICKUP, 131
+        define :UM_AMMODENIED, 132
+        define :UM_CROSSHAIRANGLE, 133
+        define :UM_SHOWMENU, 134
+        define :UM_CREDITSMSG, 135
+        define :UM_CLOSECAPTIONPLACEHOLDER, 142
+        define :UM_CAMERATRANSITION, 143
+        define :UM_AUDIOPARAMETER, 144
+        define :UM_PARTICLEMANAGER, 145
+        define :UM_HUDERROR, 146
+        define :UM_CUSTOMGAMEEVENT_CLIENTTOSERVER, 147
+        define :UM_CUSTOMGAMEEVENT_SERVERTOCLIENT, 148
+        define :UM_TRACKEDCONTROLLERINPUT_CLIENTTOSERVER, 149
         define :UM_MAX_BASE, 200
       end
 
       class EBaseEntityMessages < ::Protobuf::Enum
-        define :EM_PlayJingle, 136
-        define :EM_ScreenOverlay, 137
-        define :EM_RemoveAllDecals, 138
-        define :EM_PropagateForce, 139
-        define :EM_DoSpark, 140
-        define :EM_FixAngle, 141
+        define :EM_PLAYJINGLE, 136
+        define :EM_SCREENOVERLAY, 137
+        define :EM_REMOVEALLDECALS, 138
+        define :EM_PROPAGATEFORCE, 139
+        define :EM_DOSPARK, 140
+        define :EM_FIXANGLE, 141
       end
 
       class ERollType < ::Protobuf::Enum

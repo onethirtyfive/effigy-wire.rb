@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,6 +14,7 @@ require_relative 's2_base_gcmessages.pb'
 module Effigy
   module Wire
     module S2
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Message Classes
@@ -66,7 +67,7 @@ module Effigy
           repeated ::Effigy::Wire::S2::CDOTAMatchMetadata::Team::Player, :players, 2
           repeated :float, :graph_experience, 3
           repeated :float, :graph_gold_earned, 4
-          repeated :float, :graph_NET_worth, 5
+          repeated :float, :graph_net_worth, 5
           optional :bool, :cm_first_pick, 6
           optional :uint32, :cm_captain_player_id, 7
           repeated :uint32, :cm_bans, 8

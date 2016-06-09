@@ -3,11 +3,12 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 module Effigy
   module Wire
     module S2
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Enum Classes
@@ -140,7 +141,7 @@ module Effigy
           repeated ::Effigy::Wire::S2::CMatchAdditionalUnitInventory, :additional_units_inventory, 48
           optional ::Effigy::Wire::S2::CMsgDOTAMatch::Player::CustomGameData, :custom_game_data, 50
           optional :bool, :active_battle_pass, 51
-          optional :uint32, :NET_worth, 52
+          optional :uint32, :net_worth, 52
         end
 
         class BroadcasterInfo

@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,42 +14,43 @@ require_relative '../networkbasetypes.pb'
 module Effigy
   module Wire
     module S1
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Enum Classes
       #
       class EBaseUserMessages < ::Protobuf::Enum
-        define :UM_AchievementEvent, 1
-        define :UM_CloseCaption, 2
-        define :UM_CloseCaptionDirect, 3
-        define :UM_CurrentTimescale, 4
-        define :UM_DesiredTimescale, 5
-        define :UM_Fade, 6
-        define :UM_GameTitle, 7
-        define :UM_Geiger, 8
-        define :UM_HintText, 9
-        define :UM_HudMsg, 10
-        define :UM_HudText, 11
-        define :UM_KeyHintText, 12
-        define :UM_MessageText, 13
-        define :UM_RequestState, 14
-        define :UM_ResetHUD, 15
-        define :UM_Rumble, 16
-        define :UM_SayText, 17
-        define :UM_SayText2, 18
-        define :UM_SayTextChannel, 19
-        define :UM_Shake, 20
-        define :UM_ShakeDir, 21
-        define :UM_StatsCrawlMsg, 22
-        define :UM_StatsSkipState, 23
-        define :UM_TextMsg, 24
-        define :UM_Tilt, 25
-        define :UM_Train, 26
-        define :UM_VGUIMenu, 27
-        define :UM_VoiceMask, 28
-        define :UM_VoiceSubtitle, 29
-        define :UM_SendAudio, 30
-        define :UM_CameraTransition, 31
+        define :UM_ACHIEVEMENTEVENT, 1
+        define :UM_CLOSECAPTION, 2
+        define :UM_CLOSECAPTIONDIRECT, 3
+        define :UM_CURRENTTIMESCALE, 4
+        define :UM_DESIREDTIMESCALE, 5
+        define :UM_FADE, 6
+        define :UM_GAMETITLE, 7
+        define :UM_GEIGER, 8
+        define :UM_HINTTEXT, 9
+        define :UM_HUDMSG, 10
+        define :UM_HUDTEXT, 11
+        define :UM_KEYHINTTEXT, 12
+        define :UM_MESSAGETEXT, 13
+        define :UM_REQUESTSTATE, 14
+        define :UM_RESETHUD, 15
+        define :UM_RUMBLE, 16
+        define :UM_SAYTEXT, 17
+        define :UM_SAYTEXT2, 18
+        define :UM_SAYTEXTCHANNEL, 19
+        define :UM_SHAKE, 20
+        define :UM_SHAKEDIR, 21
+        define :UM_STATSCRAWLMSG, 22
+        define :UM_STATSSKIPSTATE, 23
+        define :UM_TEXTMSG, 24
+        define :UM_TILT, 25
+        define :UM_TRAIN, 26
+        define :UM_VGUIMENU, 27
+        define :UM_VOICEMASK, 28
+        define :UM_VOICESUBTITLE, 29
+        define :UM_SENDAUDIO, 30
+        define :UM_CAMERATRANSITION, 31
         define :UM_MAX_BASE, 63
       end
 

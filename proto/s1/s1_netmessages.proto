@@ -8,32 +8,32 @@ import "netmessages.proto";
 option cc_generic_services = false;
 
 enum SVC_Messages {
-	SVC_ServerInfo = 8;
-	SVC_SendTable = 9;
-	SVC_ClassInfo = 10;
-	SVC_SetPause = 11;
-	SVC_CreateStringTable = 12;
-	SVC_UpdateStringTable = 13;
-	SVC_VoiceInit = 14;
-	SVC_VoiceData = 15;
-	SVC_Print = 16;
-	SVC_Sounds = 17;
-	SVC_SetView = 18;
-	SVC_FixAngle = 19;
-	SVC_CrosshairAngle = 20;
-	SVC_BSPDecal = 21;
-	SVC_SplitScreen = 22;
-	SVC_UserMessage = 23;
-	SVC_EntityMessage = 24;
-	SVC_GameEvent = 25;
-	SVC_PacketEntities = 26;
-	SVC_TempEntities = 27;
-	SVC_Prefetch = 28;
-	SVC_Menu = 29;
-	SVC_GameEventList = 30;
-	SVC_GetCvarValue = 31;
-	SVC_PacketReliable = 32;
-	SVC_FullFrameSplit = 33;
+	svc_ServerInfo = 8;
+	svc_SendTable = 9;
+	svc_ClassInfo = 10;
+	svc_SetPause = 11;
+	svc_CreateStringTable = 12;
+	svc_UpdateStringTable = 13;
+	svc_VoiceInit = 14;
+	svc_VoiceData = 15;
+	svc_Print = 16;
+	svc_Sounds = 17;
+	svc_SetView = 18;
+	svc_FixAngle = 19;
+	svc_CrosshairAngle = 20;
+	svc_BSPDecal = 21;
+	svc_SplitScreen = 22;
+	svc_UserMessage = 23;
+	svc_EntityMessage = 24;
+	svc_GameEvent = 25;
+	svc_PacketEntities = 26;
+	svc_TempEntities = 27;
+	svc_Prefetch = 28;
+	svc_Menu = 29;
+	svc_GameEventList = 30;
+	svc_GetCvarValue = 31;
+	svc_PacketReliable = 32;
+	svc_FullFrameSplit = 33;
 }
 
 message CSVCMsg_CreateStringTable {
@@ -61,7 +61,7 @@ message CSVCMsg_SendTable {
 	}
 
 	optional bool is_end = 1;
-	optional string NET_table_name = 2;
+	optional string net_table_name = 2;
 	optional bool needs_decoder = 3;
 	repeated CSVCMsg_SendTable.sendprop_t props = 4;
 }

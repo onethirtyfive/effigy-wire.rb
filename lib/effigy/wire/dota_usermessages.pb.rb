@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,6 +14,7 @@ require_relative 'dota_commonmessages.pb'
 
 module Effigy
   module Wire
+    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
     ##
     # Enum Classes
@@ -245,53 +246,53 @@ module Effigy
     end
 
     class EHeroStatType < ::Protobuf::Enum
-      define :K_EHeroStatType_None, 0
-      define :K_EHeroStatType_AxeTotalDamage, 2000
-      define :K_EHeroStatType_BattleHungerDamage, 2001
-      define :K_EHeroStatType_CounterHelixDamage, 2002
-      define :K_EHeroStatType_CullingBladeDamage, 2003
-      define :K_EHeroStatType_BerserkersCallCastCount, 2004
-      define :K_EHeroStatType_BerserkersCallHeroesHitAverage, 2005
-      define :K_EHeroStatType_BerserkersCallOtherUnitsHit, 2006
-      define :K_EHeroStatType_BerserkersCallHeroAttacksTaken, 2007
-      define :K_EHeroStatType_BerserkersCallOtherAttacksTaken, 2008
-      define :K_EHeroStatType_BattleHungerCastCount, 2009
-      define :K_EHeroStatType_BattleHungerPotentialDuration, 2010
-      define :K_EHeroStatType_BattleHungerAverageDuration, 2011
-      define :K_EHeroStatType_CounterHelixProcCount, 2012
-      define :K_EHeroStatType_CounterHelixHeroProcCount, 2013
-      define :K_EHeroStatType_CounterHelixHeroesHitAverage, 2014
-      define :K_EHeroStatType_CounterHelixOtherUnitsHitCount, 2015
-      define :K_EHeroStatType_CullingBladeCastCount, 2016
-      define :K_EHeroStatType_CullingBladeKillCount, 2017
-      define :K_EHeroStatType_CullingBladeAverageHealthCulled, 2018
-      define :K_EHeroStatType_CullingBladeAverageDamageAvailable, 2019
-      define :K_EHeroStatType_CullingBladeHeroBuffAverage, 2020
+      define :K_EHEROSTATTYPE_NONE, 0
+      define :K_EHEROSTATTYPE_AXETOTALDAMAGE, 2000
+      define :K_EHEROSTATTYPE_BATTLEHUNGERDAMAGE, 2001
+      define :K_EHEROSTATTYPE_COUNTERHELIXDAMAGE, 2002
+      define :K_EHEROSTATTYPE_CULLINGBLADEDAMAGE, 2003
+      define :K_EHEROSTATTYPE_BERSERKERSCALLCASTCOUNT, 2004
+      define :K_EHEROSTATTYPE_BERSERKERSCALLHEROESHITAVERAGE, 2005
+      define :K_EHEROSTATTYPE_BERSERKERSCALLOTHERUNITSHIT, 2006
+      define :K_EHEROSTATTYPE_BERSERKERSCALLHEROATTACKSTAKEN, 2007
+      define :K_EHEROSTATTYPE_BERSERKERSCALLOTHERATTACKSTAKEN, 2008
+      define :K_EHEROSTATTYPE_BATTLEHUNGERCASTCOUNT, 2009
+      define :K_EHEROSTATTYPE_BATTLEHUNGERPOTENTIALDURATION, 2010
+      define :K_EHEROSTATTYPE_BATTLEHUNGERAVERAGEDURATION, 2011
+      define :K_EHEROSTATTYPE_COUNTERHELIXPROCCOUNT, 2012
+      define :K_EHEROSTATTYPE_COUNTERHELIXHEROPROCCOUNT, 2013
+      define :K_EHEROSTATTYPE_COUNTERHELIXHEROESHITAVERAGE, 2014
+      define :K_EHEROSTATTYPE_COUNTERHELIXOTHERUNITSHITCOUNT, 2015
+      define :K_EHEROSTATTYPE_CULLINGBLADECASTCOUNT, 2016
+      define :K_EHEROSTATTYPE_CULLINGBLADEKILLCOUNT, 2017
+      define :K_EHEROSTATTYPE_CULLINGBLADEAVERAGEHEALTHCULLED, 2018
+      define :K_EHEROSTATTYPE_CULLINGBLADEAVERAGEDAMAGEAVAILABLE, 2019
+      define :K_EHEROSTATTYPE_CULLINGBLADEHEROBUFFAVERAGE, 2020
     end
 
     class EPlayerVoiceListenState < ::Protobuf::Enum
-      define :KPVLS_None, 0
-      define :KPVLS_DeniedChatBanned, 1
-      define :KPVLS_DeniedPartner, 2
-      define :KPVLS_DeniedHLTVTalkerNotSpectator, 3
-      define :KPVLS_DeniedHLTVNoTalkerPlayerID, 4
-      define :KPVLS_DeniedHLTVTalkerNotBroadcaster, 5
-      define :KPVLS_DeniedTeamSpectator, 6
-      define :KPVLS_DeniedStudent, 8
-      define :KPVLS_Denied, 64
-      define :KPVLS_AllowHLTVTalkerIsBroadcaster, 65
-      define :KPVLS_AllowCoBroadcaster, 66
-      define :KPVLS_AllowAllChat, 67
-      define :KPVLS_AllowStudentToCoach, 68
-      define :KPVLS_AllowFellowStudent, 69
-      define :KPVLS_AllowTalkerIsCoach, 70
-      define :KPVLS_AllowCoachHearTeam, 71
-      define :KPVLS_AllowSameTeam, 72
-      define :KPVLS_AllowShowcase, 73
+      define :KPVLS_NONE, 0
+      define :KPVLS_DENIEDCHATBANNED, 1
+      define :KPVLS_DENIEDPARTNER, 2
+      define :KPVLS_DENIEDHLTVTALKERNOTSPECTATOR, 3
+      define :KPVLS_DENIEDHLTVNOTALKERPLAYERID, 4
+      define :KPVLS_DENIEDHLTVTALKERNOTBROADCASTER, 5
+      define :KPVLS_DENIEDTEAMSPECTATOR, 6
+      define :KPVLS_DENIEDSTUDENT, 8
+      define :KPVLS_DENIED, 64
+      define :KPVLS_ALLOWHLTVTALKERISBROADCASTER, 65
+      define :KPVLS_ALLOWCOBROADCASTER, 66
+      define :KPVLS_ALLOWALLCHAT, 67
+      define :KPVLS_ALLOWSTUDENTTOCOACH, 68
+      define :KPVLS_ALLOWFELLOWSTUDENT, 69
+      define :KPVLS_ALLOWTALKERISCOACH, 70
+      define :KPVLS_ALLOWCOACHHEARTEAM, 71
+      define :KPVLS_ALLOWSAMETEAM, 72
+      define :KPVLS_ALLOWSHOWCASE, 73
     end
 
     class EProjectionEvent < ::Protobuf::Enum
-      define :EPE_FirstBlood, 0
+      define :EPE_FIRSTBLOOD, 0
     end
 
 
@@ -343,8 +344,8 @@ module Effigy
     class CDOTAUserMsg_PredictionResult < ::Protobuf::Message
       class Prediction < ::Protobuf::Message
         class EResult < ::Protobuf::Enum
-          define :K_eResult_ItemGranted, 1
-          define :K_eResult_Destroyed, 2
+          define :K_ERESULT_ITEMGRANTED, 1
+          define :K_ERESULT_DESTROYED, 2
         end
 
       end
@@ -691,7 +692,7 @@ module Effigy
         optional :uint32, :item_def, 1
         optional :uint32, :num_correct, 2
         optional :uint32, :num_fails, 3
-        optional ::Effigy::Wire::CDOTAUserMsg_PredictionResult::Prediction::EResult, :result, 4, :default => ::Effigy::Wire::CDOTAUserMsg_PredictionResult::Prediction::EResult::K_eResult_ItemGranted
+        optional ::Effigy::Wire::CDOTAUserMsg_PredictionResult::Prediction::EResult, :result, 4, :default => ::Effigy::Wire::CDOTAUserMsg_PredictionResult::Prediction::EResult::K_ERESULT_ITEMGRANTED
         repeated :uint32, :granted_item_defs, 6
       end
 
@@ -899,7 +900,7 @@ module Effigy
     end
 
     class CDOTAUserMsg_ChatWheel
-      optional ::Effigy::Wire::EDOTAChatWheelMessage, :chat_message, 1, :default => ::Effigy::Wire::EDOTAChatWheelMessage::K_EDOTA_CW_Ok
+      optional ::Effigy::Wire::EDOTAChatWheelMessage, :chat_message, 1, :default => ::Effigy::Wire::EDOTAChatWheelMessage::K_EDOTA_CW_OK
       optional :uint32, :player_id, 2
       optional :uint32, :account_id, 3
       optional :uint32, :param_hero_id, 4
@@ -1099,7 +1100,7 @@ module Effigy
       optional :uint32, :tower_damage, 4
       optional ::Effigy::Wire::CDOTAUserMsg_StatsHeroPositionInfo, :position_info, 5
       optional :uint32, :total_xp, 6
-      optional :uint32, :NET_worth, 7
+      optional :uint32, :net_worth, 7
       optional :uint32, :harvested_creep_gold, 8
       optional :uint32, :claimed_farm, 9
       optional :uint32, :wards_placed, 10
@@ -1186,7 +1187,7 @@ module Effigy
     end
 
     class CMsgHeroAbilityStat
-      optional ::Effigy::Wire::EHeroStatType, :stat_type, 1, :default => ::Effigy::Wire::EHeroStatType::K_EHeroStatType_None
+      optional ::Effigy::Wire::EHeroStatType, :stat_type, 1, :default => ::Effigy::Wire::EHeroStatType::K_EHEROSTATTYPE_NONE
       optional :int32, :int_value, 2
       optional :float, :float_value, 3
     end
@@ -1245,7 +1246,7 @@ module Effigy
     end
 
     class CDOTAUserMsg_ProjectionEvent
-      optional ::Effigy::Wire::EProjectionEvent, :event_id, 1, :default => ::Effigy::Wire::EProjectionEvent::EPE_FirstBlood
+      optional ::Effigy::Wire::EProjectionEvent, :event_id, 1, :default => ::Effigy::Wire::EProjectionEvent::EPE_FIRSTBLOOD
       optional :uint32, :team, 2
     end
 

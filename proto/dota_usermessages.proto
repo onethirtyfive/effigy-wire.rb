@@ -237,53 +237,53 @@ enum DOTA_ABILITY_TARGET_TYPE {
 }
 
 enum EHeroStatType {
-    K_EHeroStatType_None = 0;
-    K_EHeroStatType_AxeTotalDamage = 2000;
-    K_EHeroStatType_BattleHungerDamage = 2001;
-    K_EHeroStatType_CounterHelixDamage = 2002;
-    K_EHeroStatType_CullingBladeDamage = 2003;
-    K_EHeroStatType_BerserkersCallCastCount = 2004;
-    K_EHeroStatType_BerserkersCallHeroesHitAverage = 2005;
-    K_EHeroStatType_BerserkersCallOtherUnitsHit = 2006;
-    K_EHeroStatType_BerserkersCallHeroAttacksTaken = 2007;
-    K_EHeroStatType_BerserkersCallOtherAttacksTaken = 2008;
-    K_EHeroStatType_BattleHungerCastCount = 2009;
-    K_EHeroStatType_BattleHungerPotentialDuration = 2010;
-    K_EHeroStatType_BattleHungerAverageDuration = 2011;
-    K_EHeroStatType_CounterHelixProcCount = 2012;
-    K_EHeroStatType_CounterHelixHeroProcCount = 2013;
-    K_EHeroStatType_CounterHelixHeroesHitAverage = 2014;
-    K_EHeroStatType_CounterHelixOtherUnitsHitCount = 2015;
-    K_EHeroStatType_CullingBladeCastCount = 2016;
-    K_EHeroStatType_CullingBladeKillCount = 2017;
-    K_EHeroStatType_CullingBladeAverageHealthCulled = 2018;
-    K_EHeroStatType_CullingBladeAverageDamageAvailable = 2019;
-    K_EHeroStatType_CullingBladeHeroBuffAverage = 2020;
+    k_EHeroStatType_None = 0;
+    k_EHeroStatType_AxeTotalDamage = 2000;
+    k_EHeroStatType_BattleHungerDamage = 2001;
+    k_EHeroStatType_CounterHelixDamage = 2002;
+    k_EHeroStatType_CullingBladeDamage = 2003;
+    k_EHeroStatType_BerserkersCallCastCount = 2004;
+    k_EHeroStatType_BerserkersCallHeroesHitAverage = 2005;
+    k_EHeroStatType_BerserkersCallOtherUnitsHit = 2006;
+    k_EHeroStatType_BerserkersCallHeroAttacksTaken = 2007;
+    k_EHeroStatType_BerserkersCallOtherAttacksTaken = 2008;
+    k_EHeroStatType_BattleHungerCastCount = 2009;
+    k_EHeroStatType_BattleHungerPotentialDuration = 2010;
+    k_EHeroStatType_BattleHungerAverageDuration = 2011;
+    k_EHeroStatType_CounterHelixProcCount = 2012;
+    k_EHeroStatType_CounterHelixHeroProcCount = 2013;
+    k_EHeroStatType_CounterHelixHeroesHitAverage = 2014;
+    k_EHeroStatType_CounterHelixOtherUnitsHitCount = 2015;
+    k_EHeroStatType_CullingBladeCastCount = 2016;
+    k_EHeroStatType_CullingBladeKillCount = 2017;
+    k_EHeroStatType_CullingBladeAverageHealthCulled = 2018;
+    k_EHeroStatType_CullingBladeAverageDamageAvailable = 2019;
+    k_EHeroStatType_CullingBladeHeroBuffAverage = 2020;
 }
 
 enum EPlayerVoiceListenState {
-    KPVLS_None = 0;
-    KPVLS_DeniedChatBanned = 1;
-    KPVLS_DeniedPartner = 2;
-    KPVLS_DeniedHLTVTalkerNotSpectator = 3;
-    KPVLS_DeniedHLTVNoTalkerPlayerID = 4;
-    KPVLS_DeniedHLTVTalkerNotBroadcaster = 5;
-    KPVLS_DeniedTeamSpectator = 6;
-    KPVLS_DeniedStudent = 8;
-    KPVLS_Denied = 64;
-    KPVLS_AllowHLTVTalkerIsBroadcaster = 65;
-    KPVLS_AllowCoBroadcaster = 66;
-    KPVLS_AllowAllChat = 67;
-    KPVLS_AllowStudentToCoach = 68;
-    KPVLS_AllowFellowStudent = 69;
-    KPVLS_AllowTalkerIsCoach = 70;
-    KPVLS_AllowCoachHearTeam = 71;
-    KPVLS_AllowSameTeam = 72;
-    KPVLS_AllowShowcase = 73;
+    kPVLS_None = 0;
+    kPVLS_DeniedChatBanned = 1;
+    kPVLS_DeniedPartner = 2;
+    kPVLS_DeniedHLTVTalkerNotSpectator = 3;
+    kPVLS_DeniedHLTVNoTalkerPlayerID = 4;
+    kPVLS_DeniedHLTVTalkerNotBroadcaster = 5;
+    kPVLS_DeniedTeamSpectator = 6;
+    kPVLS_DeniedStudent = 8;
+    kPVLS_Denied = 64;
+    kPVLS_AllowHLTVTalkerIsBroadcaster = 65;
+    kPVLS_AllowCoBroadcaster = 66;
+    kPVLS_AllowAllChat = 67;
+    kPVLS_AllowStudentToCoach = 68;
+    kPVLS_AllowFellowStudent = 69;
+    kPVLS_AllowTalkerIsCoach = 70;
+    kPVLS_AllowCoachHearTeam = 71;
+    kPVLS_AllowSameTeam = 72;
+    kPVLS_AllowShowcase = 73;
 }
 
 enum EProjectionEvent {
-    EPE_FirstBlood = 0;
+    ePE_FirstBlood = 0;
 }
 
 message CDOTAUserMsg_AIDebugLine {
@@ -506,14 +506,14 @@ message CDOTAUserMsg_HalloweenDrops {
 message CDOTAUserMsg_PredictionResult {
     message Prediction {
         enum EResult {
-            K_eResult_ItemGranted = 1;
-            K_eResult_Destroyed = 2;
+            k_eResult_ItemGranted = 1;
+            k_eResult_Destroyed = 2;
         }
 
         optional uint32 item_def = 1;
         optional uint32 num_correct = 2;
         optional uint32 num_fails = 3;
-        optional CDOTAUserMsg_PredictionResult.Prediction.EResult result = 4 [default = K_eResult_ItemGranted];
+        optional CDOTAUserMsg_PredictionResult.Prediction.EResult result = 4 [default = k_eResult_ItemGranted];
         repeated uint32 granted_item_defs = 6;
     }
 
@@ -732,7 +732,7 @@ message CDOTAUserMsg_WorldLine {
 }
 
 message CDOTAUserMsg_ChatWheel {
-    optional EDOTAChatWheelMessage chat_message = 1 [default = K_EDOTA_CW_Ok];
+    optional EDOTAChatWheelMessage chat_message = 1 [default = k_EDOTA_CW_Ok];
     optional uint32 player_id = 2;
     optional uint32 account_id = 3;
     optional uint32 param_hero_id = 4;
@@ -938,7 +938,7 @@ message CDOTAUserMsg_StatsHeroMinuteDetails {
     optional uint32 tower_damage = 4;
     optional CDOTAUserMsg_StatsHeroPositionInfo position_info = 5;
     optional uint32 total_xp = 6;
-    optional uint32 NET_worth = 7;
+    optional uint32 net_worth = 7;
     optional uint32 harvested_creep_gold = 8;
     optional uint32 claimed_farm = 9;
     optional uint32 wards_placed = 10;
@@ -1025,7 +1025,7 @@ message CDOTAUserMsg_CustomHeaderMessage {
 }
 
 message CMsgHeroAbilityStat {
-    optional EHeroStatType stat_type = 1 [default = K_EHeroStatType_None];
+    optional EHeroStatType stat_type = 1 [default = k_EHeroStatType_None];
     optional int32 int_value = 2;
     optional float float_value = 3;
 }
@@ -1084,7 +1084,7 @@ message CDOTAUserMsg_ProjectionAbility {
 }
 
 message CDOTAUserMsg_ProjectionEvent {
-    optional EProjectionEvent event_id = 1 [default = EPE_FirstBlood];
+    optional EProjectionEvent event_id = 1 [default = ePE_FirstBlood];
     optional uint32 team = 2;
 }
 

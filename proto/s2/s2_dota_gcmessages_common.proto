@@ -104,7 +104,7 @@ message CMsgDOTAMatch {
         repeated CMatchAdditionalUnitInventory additional_units_inventory = 48;
         optional CMsgDOTAMatch.Player.CustomGameData custom_game_data = 50;
         optional bool active_battle_pass = 51;
-        optional uint32 NET_worth = 52;
+        optional uint32 net_worth = 52;
     }
 
     message BroadcasterInfo {

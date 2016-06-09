@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,37 +14,38 @@ require_relative '../netmessages.pb'
 module Effigy
   module Wire
     module S1
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Enum Classes
       #
       class SVC_Messages < ::Protobuf::Enum
-        define :SVC_ServerInfo, 8
-        define :SVC_SendTable, 9
-        define :SVC_ClassInfo, 10
-        define :SVC_SetPause, 11
-        define :SVC_CreateStringTable, 12
-        define :SVC_UpdateStringTable, 13
-        define :SVC_VoiceInit, 14
-        define :SVC_VoiceData, 15
-        define :SVC_Print, 16
-        define :SVC_Sounds, 17
-        define :SVC_SetView, 18
-        define :SVC_FixAngle, 19
-        define :SVC_CrosshairAngle, 20
-        define :SVC_BSPDecal, 21
-        define :SVC_SplitScreen, 22
-        define :SVC_UserMessage, 23
-        define :SVC_EntityMessage, 24
-        define :SVC_GameEvent, 25
-        define :SVC_PacketEntities, 26
-        define :SVC_TempEntities, 27
-        define :SVC_Prefetch, 28
-        define :SVC_Menu, 29
-        define :SVC_GameEventList, 30
-        define :SVC_GetCvarValue, 31
-        define :SVC_PacketReliable, 32
-        define :SVC_FullFrameSplit, 33
+        define :SVC_SERVERINFO, 8
+        define :SVC_SENDTABLE, 9
+        define :SVC_CLASSINFO, 10
+        define :SVC_SETPAUSE, 11
+        define :SVC_CREATESTRINGTABLE, 12
+        define :SVC_UPDATESTRINGTABLE, 13
+        define :SVC_VOICEINIT, 14
+        define :SVC_VOICEDATA, 15
+        define :SVC_PRINT, 16
+        define :SVC_SOUNDS, 17
+        define :SVC_SETVIEW, 18
+        define :SVC_FIXANGLE, 19
+        define :SVC_CROSSHAIRANGLE, 20
+        define :SVC_BSPDECAL, 21
+        define :SVC_SPLITSCREEN, 22
+        define :SVC_USERMESSAGE, 23
+        define :SVC_ENTITYMESSAGE, 24
+        define :SVC_GAMEEVENT, 25
+        define :SVC_PACKETENTITIES, 26
+        define :SVC_TEMPENTITIES, 27
+        define :SVC_PREFETCH, 28
+        define :SVC_MENU, 29
+        define :SVC_GAMEEVENTLIST, 30
+        define :SVC_GETCVARVALUE, 31
+        define :SVC_PACKETRELIABLE, 32
+        define :SVC_FULLFRAMESPLIT, 33
       end
 
 
@@ -89,7 +90,7 @@ module Effigy
         end
 
         optional :bool, :is_end, 1
-        optional :string, :NET_table_name, 2
+        optional :string, :net_table_name, 2
         optional :bool, :needs_decoder, 3
         repeated ::Effigy::Wire::S1::CSVCMsg_SendTable::Sendprop_t, :props, 4
       end

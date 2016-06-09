@@ -3,108 +3,109 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 module Effigy
   module Wire
+    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
     ##
     # Enum Classes
     #
     class EDOTAChatWheelMessage < ::Protobuf::Enum
-      define :K_EDOTA_CW_Ok, 0
-      define :K_EDOTA_CW_Care, 1
-      define :K_EDOTA_CW_GetBack, 2
-      define :K_EDOTA_CW_NeedWards, 3
-      define :K_EDOTA_CW_Stun, 4
-      define :K_EDOTA_CW_Help, 5
-      define :K_EDOTA_CW_Push, 6
-      define :K_EDOTA_CW_GoodJob, 7
-      define :K_EDOTA_CW_Missing, 8
-      define :K_EDOTA_CW_Missing_Top, 9
-      define :K_EDOTA_CW_Missing_Mid, 10
-      define :K_EDOTA_CW_Missing_Bottom, 11
-      define :K_EDOTA_CW_Go, 12
-      define :K_EDOTA_CW_Initiate, 13
-      define :K_EDOTA_CW_Follow, 14
-      define :K_EDOTA_CW_Group_Up, 15
-      define :K_EDOTA_CW_Spread_Out, 16
-      define :K_EDOTA_CW_Split_Farm, 17
-      define :K_EDOTA_CW_Attack, 18
+      define :K_EDOTA_CW_OK, 0
+      define :K_EDOTA_CW_CARE, 1
+      define :K_EDOTA_CW_GETBACK, 2
+      define :K_EDOTA_CW_NEEDWARDS, 3
+      define :K_EDOTA_CW_STUN, 4
+      define :K_EDOTA_CW_HELP, 5
+      define :K_EDOTA_CW_PUSH, 6
+      define :K_EDOTA_CW_GOODJOB, 7
+      define :K_EDOTA_CW_MISSING, 8
+      define :K_EDOTA_CW_MISSING_TOP, 9
+      define :K_EDOTA_CW_MISSING_MID, 10
+      define :K_EDOTA_CW_MISSING_BOTTOM, 11
+      define :K_EDOTA_CW_GO, 12
+      define :K_EDOTA_CW_INITIATE, 13
+      define :K_EDOTA_CW_FOLLOW, 14
+      define :K_EDOTA_CW_GROUP_UP, 15
+      define :K_EDOTA_CW_SPREAD_OUT, 16
+      define :K_EDOTA_CW_SPLIT_FARM, 17
+      define :K_EDOTA_CW_ATTACK, 18
       define :K_EDOTA_CW_BRB, 19
-      define :K_EDOTA_CW_Dive, 20
+      define :K_EDOTA_CW_DIVE, 20
       define :K_EDOTA_CW_OMW, 21
-      define :K_EDOTA_CW_Get_Ready, 22
-      define :K_EDOTA_CW_Bait, 23
-      define :K_EDOTA_CW_Heal, 24
-      define :K_EDOTA_CW_Mana, 25
+      define :K_EDOTA_CW_GET_READY, 22
+      define :K_EDOTA_CW_BAIT, 23
+      define :K_EDOTA_CW_HEAL, 24
+      define :K_EDOTA_CW_MANA, 25
       define :K_EDOTA_CW_OOM, 26
-      define :K_EDOTA_CW_Skill_Cooldown, 27
-      define :K_EDOTA_CW_Ulti_Ready, 28
-      define :K_EDOTA_CW_Enemy_Returned, 29
-      define :K_EDOTA_CW_All_Missing, 30
-      define :K_EDOTA_CW_Enemy_Incoming, 31
-      define :K_EDOTA_CW_Invis_Enemy, 32
-      define :K_EDOTA_CW_Enemy_Had_Rune, 33
-      define :K_EDOTA_CW_Split_Push, 34
-      define :K_EDOTA_CW_Coming_To_Gank, 35
-      define :K_EDOTA_CW_Request_Gank, 36
-      define :K_EDOTA_CW_Fight_Under_Tower, 37
-      define :K_EDOTA_CW_Deny_Tower, 38
-      define :K_EDOTA_CW_Buy_Courier, 39
-      define :K_EDOTA_CW_Upgrade_Courier, 40
-      define :K_EDOTA_CW_Need_Detection, 41
-      define :K_EDOTA_CW_They_Have_Detection, 42
-      define :K_EDOTA_CW_Buy_TP, 43
-      define :K_EDOTA_CW_Reuse_Courier, 44
-      define :K_EDOTA_CW_Deward, 45
-      define :K_EDOTA_CW_Building_Mek, 46
-      define :K_EDOTA_CW_Building_Pipe, 47
-      define :K_EDOTA_CW_Stack_And_Pull, 48
-      define :K_EDOTA_CW_Pull, 49
-      define :K_EDOTA_CW_Pulling, 50
-      define :K_EDOTA_CW_Stack, 51
-      define :K_EDOTA_CW_Jungling, 52
-      define :K_EDOTA_CW_Roshan, 53
-      define :K_EDOTA_CW_Affirmative, 54
-      define :K_EDOTA_CW_Wait, 55
-      define :K_EDOTA_CW_Pause, 56
-      define :K_EDOTA_CW_Current_Time, 57
-      define :K_EDOTA_CW_Check_Runes, 58
-      define :K_EDOTA_CW_Smoke_Gank, 59
+      define :K_EDOTA_CW_SKILL_COOLDOWN, 27
+      define :K_EDOTA_CW_ULTI_READY, 28
+      define :K_EDOTA_CW_ENEMY_RETURNED, 29
+      define :K_EDOTA_CW_ALL_MISSING, 30
+      define :K_EDOTA_CW_ENEMY_INCOMING, 31
+      define :K_EDOTA_CW_INVIS_ENEMY, 32
+      define :K_EDOTA_CW_ENEMY_HAD_RUNE, 33
+      define :K_EDOTA_CW_SPLIT_PUSH, 34
+      define :K_EDOTA_CW_COMING_TO_GANK, 35
+      define :K_EDOTA_CW_REQUEST_GANK, 36
+      define :K_EDOTA_CW_FIGHT_UNDER_TOWER, 37
+      define :K_EDOTA_CW_DENY_TOWER, 38
+      define :K_EDOTA_CW_BUY_COURIER, 39
+      define :K_EDOTA_CW_UPGRADE_COURIER, 40
+      define :K_EDOTA_CW_NEED_DETECTION, 41
+      define :K_EDOTA_CW_THEY_HAVE_DETECTION, 42
+      define :K_EDOTA_CW_BUY_TP, 43
+      define :K_EDOTA_CW_REUSE_COURIER, 44
+      define :K_EDOTA_CW_DEWARD, 45
+      define :K_EDOTA_CW_BUILDING_MEK, 46
+      define :K_EDOTA_CW_BUILDING_PIPE, 47
+      define :K_EDOTA_CW_STACK_AND_PULL, 48
+      define :K_EDOTA_CW_PULL, 49
+      define :K_EDOTA_CW_PULLING, 50
+      define :K_EDOTA_CW_STACK, 51
+      define :K_EDOTA_CW_JUNGLING, 52
+      define :K_EDOTA_CW_ROSHAN, 53
+      define :K_EDOTA_CW_AFFIRMATIVE, 54
+      define :K_EDOTA_CW_WAIT, 55
+      define :K_EDOTA_CW_PAUSE, 56
+      define :K_EDOTA_CW_CURRENT_TIME, 57
+      define :K_EDOTA_CW_CHECK_RUNES, 58
+      define :K_EDOTA_CW_SMOKE_GANK, 59
       define :K_EDOTA_CW_GLHF, 60
-      define :K_EDOTA_CW_Nice, 61
-      define :K_EDOTA_CW_Thanks, 62
-      define :K_EDOTA_CW_Sorry, 63
-      define :K_EDOTA_CW_No_Give_Up, 64
-      define :K_EDOTA_CW_Just_Happened, 65
-      define :K_EDOTA_CW_Game_Is_Hard, 66
-      define :K_EDOTA_CW_New_Meta, 67
-      define :K_EDOTA_CW_My_Bad, 68
-      define :K_EDOTA_CW_Regret, 69
-      define :K_EDOTA_CW_Relax, 70
-      define :K_EDOTA_CW_MissingHero, 71
-      define :K_EDOTA_CW_ReturnedHero, 72
+      define :K_EDOTA_CW_NICE, 61
+      define :K_EDOTA_CW_THANKS, 62
+      define :K_EDOTA_CW_SORRY, 63
+      define :K_EDOTA_CW_NO_GIVE_UP, 64
+      define :K_EDOTA_CW_JUST_HAPPENED, 65
+      define :K_EDOTA_CW_GAME_IS_HARD, 66
+      define :K_EDOTA_CW_NEW_META, 67
+      define :K_EDOTA_CW_MY_BAD, 68
+      define :K_EDOTA_CW_REGRET, 69
+      define :K_EDOTA_CW_RELAX, 70
+      define :K_EDOTA_CW_MISSINGHERO, 71
+      define :K_EDOTA_CW_RETURNEDHERO, 72
       define :K_EDOTA_CW_GG, 73
       define :K_EDOTA_CW_GGWP, 74
-      define :K_EDOTA_CW_All_GG, 75
-      define :K_EDOTA_CW_All_GGWP, 76
-      define :K_EDOTA_CW_What_To_Buy, 77
-      define :K_EDOTA_CW_Im_Retreating, 78
-      define :K_EDOTA_CW_Space_Created, 79
-      define :K_EDOTA_CW_Whoops, 80
-      define :K_EDOTA_CW_Tower_then_Back, 81
-      define :K_EDOTA_CW_Barracks_then_Back, 82
-      define :K_EDOTA_CW_Ward_Bottom_Rune, 83
-      define :K_EDOTA_CW_Ward_Top_Rune, 84
-      define :K_EDOTA_CW_Zeus_Ult, 85
+      define :K_EDOTA_CW_ALL_GG, 75
+      define :K_EDOTA_CW_ALL_GGWP, 76
+      define :K_EDOTA_CW_WHAT_TO_BUY, 77
+      define :K_EDOTA_CW_IM_RETREATING, 78
+      define :K_EDOTA_CW_SPACE_CREATED, 79
+      define :K_EDOTA_CW_WHOOPS, 80
+      define :K_EDOTA_CW_TOWER_THEN_BACK, 81
+      define :K_EDOTA_CW_BARRACKS_THEN_BACK, 82
+      define :K_EDOTA_CW_WARD_BOTTOM_RUNE, 83
+      define :K_EDOTA_CW_WARD_TOP_RUNE, 84
+      define :K_EDOTA_CW_ZEUS_ULT, 85
     end
 
     class EDOTAStatPopupTypes < ::Protobuf::Enum
-      define :K_EDOTA_SPT_Textline, 0
-      define :K_EDOTA_SPT_Basic, 1
-      define :K_EDOTA_SPT_Poll, 2
-      define :K_EDOTA_SPT_Grid, 3
+      define :K_EDOTA_SPT_TEXTLINE, 0
+      define :K_EDOTA_SPT_BASIC, 1
+      define :K_EDOTA_SPT_POLL, 2
+      define :K_EDOTA_SPT_GRID, 3
     end
 
     class Dotaunitorder_t < ::Protobuf::Enum
@@ -192,7 +193,7 @@ module Effigy
     end
 
     class CDOTAMsg_SendStatPopup
-      optional ::Effigy::Wire::EDOTAStatPopupTypes, :style, 1, :default => ::Effigy::Wire::EDOTAStatPopupTypes::K_EDOTA_SPT_Textline
+      optional ::Effigy::Wire::EDOTAStatPopupTypes, :style, 1, :default => ::Effigy::Wire::EDOTAStatPopupTypes::K_EDOTA_SPT_TEXTLINE
       repeated :string, :stat_strings, 2
       repeated :int32, :stat_images, 3
     end

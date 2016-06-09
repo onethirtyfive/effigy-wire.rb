@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,24 +14,25 @@ require_relative '../networkbasetypes.pb'
 module Effigy
   module Wire
     module S2
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Enum Classes
       #
       class EBaseGameEvents < ::Protobuf::Enum
-        define :GE_VDebugGameSessionIDEvent, 200
-        define :GE_PlaceDecalEvent, 201
-        define :GE_ClearWorldDecalsEvent, 202
-        define :GE_ClearEntityDecalsEvent, 203
-        define :GE_ClearDecalsForSkeletonInstanceEvent, 204
-        define :GE_Source1LegacyGameEventList, 205
-        define :GE_Source1LegacyListenEvents, 206
-        define :GE_Source1LegacyGameEvent, 207
-        define :GE_SosStartSoundEvent, 208
-        define :GE_SosStopSoundEvent, 209
-        define :GE_SosSetSoundEventParams, 210
-        define :GE_SosSetLibraryStackFields, 211
-        define :GE_SosStopSoundEventHash, 212
+        define :GE_VDEBUGGAMESESSIONIDEVENT, 200
+        define :GE_PLACEDECALEVENT, 201
+        define :GE_CLEARWORLDDECALSEVENT, 202
+        define :GE_CLEARENTITYDECALSEVENT, 203
+        define :GE_CLEARDECALSFORSKELETONINSTANCEEVENT, 204
+        define :GE_SOURCE1LEGACYGAMEEVENTLIST, 205
+        define :GE_SOURCE1LEGACYLISTENEVENTS, 206
+        define :GE_SOURCE1LEGACYGAMEEVENT, 207
+        define :GE_SOSSTARTSOUNDEVENT, 208
+        define :GE_SOSSTOPSOUNDEVENT, 209
+        define :GE_SOSSETSOUNDEVENTPARAMS, 210
+        define :GE_SOSSETLIBRARYSTACKFIELDS, 211
+        define :GE_SOSSTOPSOUNDEVENTHASH, 212
       end
 
 

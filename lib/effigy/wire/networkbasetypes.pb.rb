@@ -3,29 +3,30 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 module Effigy
   module Wire
+    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
     ##
     # Enum Classes
     #
     class NET_Messages < ::Protobuf::Enum
       define :NET_NOP, 0
-      define :NET_Disconnect, 1
-      define :NET_File, 2
-      define :NET_SplitScreenUser, 3
-      define :NET_Tick, 4
-      define :NET_StringCmd, 5
-      define :NET_SetConVar, 6
-      define :NET_SignonState, 7
-      define :NET_SpawnGroup_Load, 8
-      define :NET_SpawnGroup_ManifestUpdate, 9
-      define :NET_SpawnGroup_SetCreationTick, 11
-      define :NET_SpawnGroup_Unload, 12
-      define :NET_SpawnGroup_LoadCompleted, 13
-      define :NET_ReliableMessageEndMarker, 14
+      define :NET_DISCONNECT, 1
+      define :NET_FILE, 2
+      define :NET_SPLITSCREENUSER, 3
+      define :NET_TICK, 4
+      define :NET_STRINGCMD, 5
+      define :NET_SETCONVAR, 6
+      define :NET_SIGNONSTATE, 7
+      define :NET_SPAWNGROUP_LOAD, 8
+      define :NET_SPAWNGROUP_MANIFESTUPDATE, 9
+      define :NET_SPAWNGROUP_SETCREATIONTICK, 11
+      define :NET_SPAWNGROUP_UNLOAD, 12
+      define :NET_SPAWNGROUP_LOADCOMPLETED, 13
+      define :NET_RELIABLEMESSAGEENDMARKER, 14
     end
 
     class SpawnGroupFlags_t < ::Protobuf::Enum

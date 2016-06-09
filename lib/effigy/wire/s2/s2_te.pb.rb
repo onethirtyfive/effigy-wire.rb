@@ -3,7 +3,7 @@
 ##
 # This file is auto-generated. DO NOT EDIT!
 #
-require 'protobuf/message'
+require 'protobuf'
 
 
 ##
@@ -14,38 +14,39 @@ require_relative '../networkbasetypes.pb'
 module Effigy
   module Wire
     module S2
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
 
       ##
       # Enum Classes
       #
       class ETEProtobufIds < ::Protobuf::Enum
-        define :TE_EffectDispatchId, 400
-        define :TE_ArmorRicochetId, 401
-        define :TE_BeamEntPointId, 402
-        define :TE_BeamEntsId, 403
-        define :TE_BeamPointsId, 404
-        define :TE_BeamRingId, 405
-        define :TE_BreakModelId, 406
-        define :TE_BSPDecalId, 407
-        define :TE_BubblesId, 408
-        define :TE_BubbleTrailId, 409
-        define :TE_DecalId, 410
-        define :TE_WorldDecalId, 411
-        define :TE_EnergySplashId, 412
-        define :TE_FizzId, 413
-        define :TE_ShatterSurfaceId, 414
-        define :TE_GlowSpriteId, 415
-        define :TE_ImpactId, 416
-        define :TE_MuzzleFlashId, 417
-        define :TE_BloodStreamId, 418
-        define :TE_ExplosionId, 419
-        define :TE_DustId, 420
-        define :TE_LargeFunnelId, 421
-        define :TE_SparksId, 422
-        define :TE_PhysicsPropId, 423
-        define :TE_PlayerDecalId, 424
-        define :TE_ProjectedDecalId, 425
-        define :TE_SmokeId, 426
+        define :TE_EFFECTDISPATCHID, 400
+        define :TE_ARMORRICOCHETID, 401
+        define :TE_BEAMENTPOINTID, 402
+        define :TE_BEAMENTSID, 403
+        define :TE_BEAMPOINTSID, 404
+        define :TE_BEAMRINGID, 405
+        define :TE_BREAKMODELID, 406
+        define :TE_BSPDECALID, 407
+        define :TE_BUBBLESID, 408
+        define :TE_BUBBLETRAILID, 409
+        define :TE_DECALID, 410
+        define :TE_WORLDDECALID, 411
+        define :TE_ENERGYSPLASHID, 412
+        define :TE_FIZZID, 413
+        define :TE_SHATTERSURFACEID, 414
+        define :TE_GLOWSPRITEID, 415
+        define :TE_IMPACTID, 416
+        define :TE_MUZZLEFLASHID, 417
+        define :TE_BLOODSTREAMID, 418
+        define :TE_EXPLOSIONID, 419
+        define :TE_DUSTID, 420
+        define :TE_LARGEFUNNELID, 421
+        define :TE_SPARKSID, 422
+        define :TE_PHYSICSPROPID, 423
+        define :TE_PLAYERDECALID, 424
+        define :TE_PROJECTEDDECALID, 425
+        define :TE_SMOKEID, 426
       end
 
 
