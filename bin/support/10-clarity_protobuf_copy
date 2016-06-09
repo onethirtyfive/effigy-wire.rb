@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'logger'
+
+err_log = Logger.new(STDERR)
+
+EFF_WIRE_ROOT = File.join(__dir__, '..', '..')
+
+EFF_CLARITY_PROTO_ROOT =
+  begin
+    ENV.fetch('EFF_CLARITY_PROTO_ROOT')
+  rescue KeyError
+    File.join(
+      EFF_WIRE_ROOT,
+      '..',
+      'clarity-protobuf',
+      'src', 'main', 'proto'
+    )
+  end
+
+EFF_CLARITY_PROTO_BIN_ROOT =
+  begin
+    ENV.fetch('EFF_CLARITY_PROTO_BIN_ROOT')
+  rescue KeyError
+    File.join(EFF_CLARITY_PROTO_ROOT, 'bin')
+  end
+
+EFF_CLARITY_PROTO_COMMON_ROOT =
+  begin
+    ENV.fetch('EFF_CLARITY_PROTO_COMMON_ROOT')
+  rescue KeyError
+    File.join(EFF_CLARITY_PROTO_ROOT, 'common')
+  end
+
+EFF_PROTO_ROOT =
+  begin
+    ENV.fetch('EFF_PROTO_ROOT')
+  rescue KeyError
+    File.join(EFF_WIRE_ROOT, 'proto')
+  end
+
+src_package_paths =
+  Dir.glob("#{EFF_CLARITY_PROTO_ROOT}/*").select do |package_path|
+    next(false) if package_path.include?(EFF_CLARITY_PROTO_BIN_ROOT)
+    next(false) if package_path.include?(EFF_CLARITY_PROTO_COMMON_ROOT)
+    true
+  end
+
+if src_package_paths.empty?
+  raise <<-EOV
+
+
+  Provided clarity-protobuf proto root is apparently empty. Exiting.
+
+  EOV
+end
+
+src_package_paths.each do |src_package_path|
+  puts "> Copying '#{src_package_path}'"
+  FileUtils.cp_r(src_package_path, EFF_PROTO_ROOT)
+end
+
+puts "> Copying '#{EFF_CLARITY_PROTO_COMMON_ROOT}'"
+FileUtils.cp(
+  Dir.glob(File.join(EFF_CLARITY_PROTO_COMMON_ROOT, '*.proto')),
+  EFF_PROTO_ROOT
+)

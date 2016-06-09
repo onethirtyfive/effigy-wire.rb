@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'effigy/wire'
 
 Gem::Specification.new do |spec|
   spec.name          = 'effigy_wire'
-  spec.version       = Effigy::Wire::VERSION
+  spec.version       = '0.0.3'
   spec.authors       = ['Joshua Morris']
   spec.email         = ['joshua.a.morris@gmail.com']
   spec.summary       = %q{Protocol buffer definitions for Effigy.}

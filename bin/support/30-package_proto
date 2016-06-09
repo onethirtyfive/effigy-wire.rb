@@ -4,14 +4,16 @@ require 'logger'
 
 err_log = Logger.new(STDERR)
 
-PROTO_ROOT =
+EFF_WIRE_ROOT = File.join(__dir__, '..', '..')
+
+EFF_PROTO_ROOT =
   begin
-    ENV.fetch('PROTO_ROOT')
+    ENV.fetch('EFF_PROTO_ROOT')
   rescue KeyError
-    File.join(Dir.pwd, 'proto')
+    File.join(EFF_WIRE_ROOT, 'proto')
   end
 
-proto_paths = Dir.glob("#{PROTO_ROOT}/**/*").select do |proto_path|
+proto_paths = Dir.glob("#{EFF_PROTO_ROOT}/**/*").select do |proto_path|
   next(false) if File.directory?(proto_path)
   true
 end
@@ -20,11 +22,11 @@ if proto_paths.empty?
   raise <<-EOV
 
   
-  No definitions found in #{PROTO_ROOT}!
+  No definitions found in #{EFF_PROTO_ROOT}!
 
     Either:
       1. Run ./bin/bootstrap in the project root directory, or
-      2. Set PROTO_ROOT to the location of your proto definitions
+      2. Set EFF_PROTO_ROOT to the location of your proto definitions
 
   EOV
 end
@@ -37,9 +39,9 @@ proto_paths.each do |proto_path|
   end
 
   exclusion_index =
-    proto_path.split('/').length - 1 == PROTO_ROOT.split('/').length ? -3
+    proto_path.split('/').length - 1 == EFF_PROTO_ROOT.split('/').length ? -3
                                                                      : -2
-  rel_path           = proto_path[PROTO_ROOT.length+1..-1]
+  rel_path           = proto_path[EFF_PROTO_ROOT.length+1..-1]
   package_components =
     [
       'effigy',

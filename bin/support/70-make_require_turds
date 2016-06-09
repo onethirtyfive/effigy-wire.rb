@@ -4,11 +4,13 @@ require 'logger'
 
 err_log = Logger.new(STDERR)
 
-LIB_ROOT =
+EFF_WIRE_ROOT = File.join(__dir__, '..', '..')
+
+EFF_LIB_ROOT =
   begin
-    ENV.fetch('LIB_ROOT')
+    ENV.fetch('EFF_LIB_ROOT')
   rescue KeyError
-    File.join(__dir__, '..', 'lib')
+    File.join(EFF_WIRE_ROOT, 'lib')
   end
 
 REQUIRE_TURD_GENERATOR =
@@ -20,20 +22,22 @@ end
     EOV
   end
 
+puts "> Making some require files..."
+
 # lib/effigy
-path = File.join(LIB_ROOT, 'effigy.rb')
+path = File.join(EFF_LIB_ROOT, 'effigy.rb')
 File.open(path, 'w') do |file|
   file.write(REQUIRE_TURD_GENERATOR.call('effigy'))
 end
 
 # lib/effigy/wire
-path = File.join(LIB_ROOT, 'effigy', 'wire.rb')
+path = File.join(EFF_LIB_ROOT, 'effigy', 'wire.rb')
 File.open(path, 'w') do |file|
   file.write(REQUIRE_TURD_GENERATOR.call('wire'))
 end
 
 # lib/effigy/wire/#{package}.rb
-packages_root = File.join(LIB_ROOT, 'effigy', 'wire')
+packages_root = File.join(EFF_LIB_ROOT, 'effigy', 'wire')
 Dir.glob(File.join(packages_root, '*')).each do |path|
   next unless File.directory?(path)
   package = File.basename(path)

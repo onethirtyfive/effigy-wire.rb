@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+#
+# run this to add binstubs to local executables in project root
+echo "$PWD/bin"
+export PATH="$PWD/bin:$PATH"
+hash -r 2>/dev/null || true

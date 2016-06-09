@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+EFF_WIRE_ROOT = File.join(__dir__, '..')
+
+EFF_RUBY_VERSION =
+  begin
+    ENV.fetch('EFF_RUBY_VERSION')
+  rescue KeyError
+    File.read(File.join(EFF_WIRE_ROOT, '.ruby-version'))
+  end
+
+script_paths = Dir.glob(File.join(__dir__, 'support', '*')).to_a.sort
+script_paths.each do |script_path|
+  puts <<-EOV
+
+
+
+********************************************************************************
+  Running '#{File.basename(script_path)}'
+********************************************************************************
+  EOV
+
+  status =
+    system(
+      {
+        'RBENV_VERSION'                 => EFF_RUBY_VERSION,
+        'EFF_SKIP_CONFIRM'              => 'true',
+        'EFF_CLARITY_PROTO_ROOT'        => ENV['EFF_CLARITY_PROTO_ROOT'],
+        'EFF_CLARITY_PROTO_BIN_ROOT'    => ENV['EFF_CLARITY_PROTO_BIN_ROOT'],
+        'EFF_CLARITY_PROTO_COMMON_ROOT' => ENV['EFF_CLARITY_PROTO_COMMON_ROOT'],
+        'EFF_PROTO_ROOT'                => ENV['EFF_PROTO_ROOT'],
+        'EFF_LIB_ROOT'                  => ENV['EFF_LIB_ROOT'],
+        'EFF_RUBY_OUT_ROOT'             => ENV['EFF_RUBY_OUT_ROOT'],
+      },
+      "ruby #{script_path}"
+    )
+
+  raise "Something went wrong with #{script_path}" unless !!status
+end
+
+puts <<-EOV
+
+
+All done! Don't forget to manually fix require_relatives and bump VERSION!
+
+EOV
+

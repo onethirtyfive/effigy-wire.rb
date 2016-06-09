@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+EFF_WIRE_ROOT = File.join(__dir__, '..', '..')
+
+EFF_PROTO_ROOT =
+  begin
+    ENV.fetch('EFF_PROTO_ROOT')
+  rescue KeyError
+    File.join(EFF_WIRE_ROOT, 'proto')
+  end
+
+Dir.glob(File.join(EFF_PROTO_ROOT, '**/*')).each do |proto_path|
+  next if File.directory?(proto_path)
+
+  puts "> Tweaking #{File.basename(proto_path)}"
+  cmd = <<-EOV
+    sed -i \
+        -e '/optional/ s/optional \\./optional /' \
+        -e '/repeated/ s/repeated \\./repeated /' \
+        #{proto_path}
+  EOV
+  status = system(cmd)
+  exit(-1) unless !!status
+end

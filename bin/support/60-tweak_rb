@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+EFF_WIRE_ROOT = File.join(__dir__, '..', '..')
+
+EFF_RUBY_OUT_ROOT =
+  begin
+    ENV.fetch('EFF_RUBY_OUT_ROOT')
+  rescue KeyError
+    File.join(EFF_WIRE_ROOT, 'lib', 'effigy', 'wire')
+  end
+
+Dir.glob(File.join(EFF_RUBY_OUT_ROOT, '**/*')).each do |rb_path|
+  next if File.directory?(rb_path)
+
+  puts "> Tweaking #{File.basename(rb_path)}"
+  cmd = <<-EOV
+    sed -i \
+        -e '/require ''.*..pb''/ s/require/require_relative/' \
+        #{rb_path}
+  EOV
+  status = system(cmd)
+  exit(-1) unless !!status
+end

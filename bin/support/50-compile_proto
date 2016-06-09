@@ -1,0 +1,100 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+require 'logger'
+
+err_log = Logger.new(STDERR)
+
+EFF_WIRE_ROOT = File.join(__dir__, '..', '..')
+
+EFF_PROTO_ROOT =
+  begin
+    ENV.fetch('EFF_PROTO_ROOT')
+  rescue KeyError
+    File.join(EFF_WIRE_ROOT, 'proto')
+  end
+
+EFF_LIB_ROOT =
+  begin
+    ENV.fetch('EFF_LIB_ROOT')
+  rescue KeyError
+    File.join(EFF_WIRE_ROOT, 'lib')
+  end
+
+EFF_RUBY_OUT_ROOT =
+  begin
+    ENV.fetch('EFF_RUBY_OUT_ROOT')
+  rescue KeyError
+    File.join(EFF_LIB_ROOT, 'effigy', 'wire')
+  end
+
+EFF_SKIP_CONFIRM =
+  begin
+    !!ENV.fetch('EFF_SKIP_CONFIRM')
+  rescue KeyError
+    false
+  end
+
+unless EFF_SKIP_CONFIRM
+  print "Have you cleaned, packaged, and tweak-proto'ed? [yN] > "
+  answer = gets.strip
+
+  unless answer == 'y'
+    print 'OK, go take care of that.'
+    exit(0)
+  end
+end
+
+puts "> Ensuring output directory exists"
+FileUtils.mkdir_p(EFF_RUBY_OUT_ROOT)
+
+package_paths = []
+proto_paths   = []
+
+Dir.glob("#{EFF_PROTO_ROOT}/*").select do |path|
+  if File.directory?(path)
+    package_paths << path
+  else
+    proto_paths << path
+  end
+end
+
+proto_paths.each do |proto_path|
+  puts "> Compiling '#{File.basename(proto_path)}'"
+  cmd = <<-EOV
+    protoc \
+      --proto_path=#{File.join(EFF_PROTO_ROOT)} \
+      --ruby_out=#{EFF_RUBY_OUT_ROOT} \
+      #{proto_path}
+  EOV
+  status = system(
+    {
+      'PB_UPCASE_ENUMS'    => 'true',
+      'PB_NO_TAG_WARNINGS' => 'true'
+    },
+    cmd
+  )
+  exit(-1) unless !!status
+end
+
+package_paths.each do |package_path|
+  puts "> Package '#{File.basename(package_path)}'"
+
+  Dir.glob(File.join(package_path, '*.proto')).each do |proto_path|
+    puts "  > #{File.basename(proto_path)}"
+    cmd = <<-EOV
+      protoc \
+        --proto_path=#{File.join(EFF_PROTO_ROOT)} \
+        --proto_path=#{package_path} \
+        --ruby_out=#{EFF_RUBY_OUT_ROOT} \
+        #{proto_path}
+    EOV
+    status = system(
+      {
+        'PB_UPCASE_ENUMS'    => 'true',
+        'PB_NO_TAG_WARNINGS' => 'true'
+      },
+      cmd
+    )
+    exit(-1) unless !!status
+  end
+end

@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+EFF_WIRE_ROOT = File.join(__dir__, '..', '..')
+
+EFF_PROTO_ROOT =
+  begin
+    ENV.fetch('EFF_PROTO_ROOT')
+  rescue KeyError
+    File.join(EFF_WIRE_ROOT, 'proto')
+  end
+
+EFF_LIB_ROOT =
+  begin
+    ENV.fetch('EFF_LIB_ROOT')
+  rescue KeyError
+    File.join(EFF_WIRE_ROOT, 'lib')
+  end
+
+
+puts "> Deleting and recreating '#{EFF_LIB_ROOT}'"
+begin
+  FileUtils.rm_rf(EFF_LIB_ROOT)
+rescue Errno::ENOENT
+end
+FileUtils.mkdir(EFF_LIB_ROOT)
+
+
+puts "> Deleting and recreating '#{EFF_PROTO_ROOT}'"
+begin
+  FileUtils.rm_rf(EFF_PROTO_ROOT)
+rescue Errno::ENOENT
+end
+FileUtils.mkdir(EFF_PROTO_ROOT)

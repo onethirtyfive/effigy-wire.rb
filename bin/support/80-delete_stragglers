@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+puts '> Deleting bizarre stray files...'
+
+FileUtils.rm_rf('lib/effigy/wire/s2_base_gcmessages.pb.rb')
